@@ -1,76 +1,3 @@
-# Next.js + Tailwind + Vercel Rules
-
-You are a senior full-stack developer.
-
-General requirements:
-
-- Use TypeScript instead of JavaScript whenever possible.
-- Prefer Next.js App Router.
-- Generate production-ready code.
-- Follow modern React and Next.js best practices.
-- Use reusable components.
-- Avoid code duplication.
-- Keep components modular and maintainable.
-
-Responsive Design:
-
-- Always use mobile-first design.
-- Ensure layouts work from 320px width and above.
-- Avoid horizontal scrolling.
-- Ensure responsive navigation.
-- Ensure touch-friendly interactions.
-- Test responsiveness for mobile, tablet, laptop and desktop layouts.
-
-Styling:
-
-- Use Tailwind CSS.
-- Avoid inline styles whenever possible.
-- Use semantic HTML.
-- Maintain consistent spacing and typography.
-- Prefer modern premium UI patterns.
-
-Performance:
-
-- Optimize for Core Web Vitals.
-- Minimize unnecessary dependencies.
-- Optimize images.
-- Use lazy loading where appropriate.
-
-Accessibility:
-
-- Follow WCAG best practices.
-- Use proper labels.
-- Ensure keyboard accessibility.
-- Use semantic landmarks.
-
-SEO:
-
-- Use proper heading hierarchy.
-- Generate SEO-friendly markup.
-- Consider metadata and Open Graph tags.
-
-Vercel:
-
-- Ensure compatibility with Vercel deployment.
-- Avoid server-side patterns incompatible with Vercel.
-- Prefer edge-friendly solutions when appropriate.
-
-Code Quality:
-
-- Handle loading states.
-- Handle error states.
-- Handle empty states.
-- Preserve existing functionality during refactors.
-- Explain important architectural decisions when relevant.
-
-AI Website Generation:
-
-- Prefer premium modern layouts over generic templates.
-- Create visually polished interfaces.
-- Prioritize readability and conversion-focused design.
-- Suggest improvements when UX can be enhanced.
-
-
 {
   "name": "run_terminal_command",
   "parameters": {
@@ -92,5 +19,115 @@ const Header = () => {
         {/* Logo */}
         <a href="/" className="text-lg font-bold">Healing Rooms</a>
         {/* Navigation menu */}
-        <ul className="flex space-x-4
+        <ul className="flex space-x-4">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/healing-sessions">Healing Sessions</a></li>
+          <li><a href="/private-prayer-sessions">Private Prayer Sessions</a></li>
+          <li><a href="/inner-restoration">Inner Restoration</a></li>
+          <li><a href="/retreat-experiences">Retreat Experiences</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;
+`
+}
+
+{
+  "name": "edit_existing_file",
+  "parameters": {
+    "filepath": "/home/workspace/components/Hero.tsx",
+    "changes": `
+import React from 'react';
+
+const Hero = () => {
+  return (
+    <section className="bg-cover bg-center h-[60vh] flex items-center justify-center">
+      <div className="container mx-auto text-center">
+        <h1 className="text-4xl font-bold">Find peace and restoration in our serene retreat center</h1>
+        <p className="mt-4 text-xl">Escape the stresses of everyday life and rejuvenate your mind, body, and soul.</p>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
+`
+  }
+}
+
+{
+  "name": "edit_existing_file",
+  "parameters": {
+    "filepath": "/home/workspace/styles/tailwind.config.js",
+    "changes": `
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: {
+    extend: {}
+  },
+  plugins: []
+}
+`
+  }
+}
+
+{
+  "name": "edit_existing_file",
+  "parameters": {
+    "filepath": "/home/workspace/package.json",
+    "changes": `
+{
+  "name": "run_terminal_command",
+  "parameters": {
+    "command": "npm install tailwindcss"
+  }
+`
+  }
+}
+
+
+{
+  "name": "edit_existing_file",
+  "parameters": {
+    "filepath": "/home/workspace/package.json",
+    "changes": `
+"scripts": {
+  ...
+  "postinstall": "npx tailwindcss -i ./styles/tailwind.css -o ./public/styles/tailwind.css"
+}
+`
+  }
+}
+
+{
+  "name": "edit_existing_file",
+  "parameters": {
+    "filepath": "/home/workspace/styles/tailwind.css",
+    "changes": `
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+`
+  }
+}
+
+
+{
+  "name": "run_terminal_command",
+  "parameters": {
+    "command": "npm run dev"
+  }
+}
 
