@@ -123,11 +123,51 @@ module.exports = {
   }
 }
 
+{
+  "name": "edit_existing_file",
+  "parameters": {
+    "filepath": "/home/workspace/app/page.tsx",
+    "changes": `
+import React from 'react';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+
+export default function HomePage() {
+  return (
+    <>
+      <Header />
+      <Hero />
+      {/* Services section */}
+      {/* Testimonials section */}
+      {/* Contact section */}
+    </>
+  );
+}
+`
+  }
+}
+
+{
+  "name": "edit_existing_file",
+  "parameters": {
+    "filepath": "/home/workspace/styles/globals.css",
+    "changes": `
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+`
+  }
+}
 
 {
   "name": "run_terminal_command",
   "parameters": {
-    "command": "npm run dev"
+    "command": "npm install tailwindcss"
   }
 }
 
