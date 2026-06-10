@@ -1,0 +1,9 @@
+{
+  "name": "Healing Rooms",
+  "short_name": "Healing Rooms",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf6ee",
+  "theme_color": "#2f4f41",
+  "icons": []
+}
